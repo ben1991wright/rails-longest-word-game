@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+@import 'games';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
+ body {
+  font-family: 'Source Sans Pro', sans-serif;
+ }
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>Results!</h1>
+  <% case @status %>
+  <% when 'valid' %>
+    <p>Congratulations <strong><%= @word %></strong> is a word!!!!!!!!!!!!!!!!!!11111one</p>
+  <% when 'not a word'%>
+    <p>Sorry, but <%= @word %> is not a word</p>
+  <% when 'not in grid' %>
+    <p>Sorry, but <%= @word %> can not be made out of <%= @letters %></p>
+  <% end %>
+
+  <p>Your current score is <strong><%= @score %></strong></p>
+
+  <%= link_to 'Try a new grid', new_path, class: 'btn' %>
+</div>
+

@@ -1,0 +1,21 @@
+<%= audio_tag 'countdown.wav', autoplay: true%>
+<div class="container">
+  <h1>Your Letters:</h1>
+  <div class="grid">
+    <% @letters.each do |letter| %>
+      <div class="grid-letter">
+        <%= letter %>
+      </div>
+    <% end %>
+  </div>
+  <marquee behavior="scroll" direction="right" scrollamount="50"><%= image_tag "whiteley.jpg", class: 'richard' %></marquee>
+  <form action="/score" method="post">
+    <h3>What is the longest word you can make?</h3>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :grid, @letters %>
+    <div class="word-input">
+      <input type="text" name="word" autofocus="true">
+      <input type="submit" value="Score it!">
+    </div>
+  </form>
+</div>
